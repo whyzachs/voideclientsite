@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — Voide Client</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div class="bg-mesh"></div>
+<div class="bg-grid"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<nav class="nav glass" style="position:fixed;top:20px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:1200px;border-radius:16px;z-index:100;">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" style="text-decoration:none;color:var(--text);">
+      <span class="logo-v">V</span><span class="logo-rest">OIDE</span>
+      <div class="logo-badge">CLIENT</div>
+    </a>
+  </div>
+</nav>
+
+<div class="page-body">
+  <div class="auth-card glass-card" style="max-width:480px;">
+    <div class="auth-logo">
+      <div class="nav-logo" style="justify-content:center;display:flex;align-items:center;gap:6px;font-weight:800;font-size:22px;">
+        <span class="logo-v">V</span><span class="logo-rest">OIDE</span>
+        <div class="logo-badge">CLIENT</div>
+      </div>
+    </div>
+    <h1 class="auth-title">Create account</h1>
+    <p class="auth-sub">Get access to Voide Client downloads and your personal dashboard</p>
+
+    <div class="form-group">
+      <label class="form-label">Username</label>
+      <input type="text" class="form-input" id="regUser" placeholder="aggry" autocomplete="username">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-input" id="regEmail" placeholder="you@example.com" autocomplete="email">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-input" id="regPass" placeholder="••••••••" autocomplete="new-password">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Confirm Password</label>
+      <input type="password" class="form-input" id="regPass2" placeholder="••••••••" autocomplete="new-password">
+      <div class="form-error" id="regError">Passwords do not match.</div>
+    </div>
+
+    <div style="background:rgba(123,94,167,0.08);border:1px solid rgba(123,94,167,0.2);border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:13px;color:var(--text-muted);">
+      <span style="color:var(--accent-2);font-weight:700;">Note:</span> After registration you will receive a license key. The key binds to your HWID on first activation.
+    </div>
+
+    <button class="btn-primary btn-full" id="regBtn" onclick="doRegister()">
+      Create Account
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+
+    <p class="auth-divider" style="margin-top:20px;">
+      Already have an account? <a href="login.html">Sign in →</a>
+    </p>
+    <p class="auth-divider" style="margin-top:10px;">
+      <a href="../index.html" style="color:var(--text-muted);font-size:13px;">← Back to site</a>
+    </p>
+  </div>
+</div>
+
+<script>
+const cursor = document.getElementById('cursor');
+const cursorDot = document.getElementById('cursorDot');
+let mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+function animCursor(){cx+=(mx-cx)*0.18;cy+=(my-cy)*0.18;cursor.style.left=cx+'px';cursor.style.top=cy+'px';cursorDot.style.left=mx+'px';cursorDot.style.top=my+'px';requestAnimationFrame(animCursor);}
+animCursor();
+document.querySelectorAll('a,button,input').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cursor.classList.add('cursor--hover'));
+  el.addEventListener('mouseleave',()=>cursor.classList.remove('cursor--hover'));
+});
+
+function doRegister() {
+  const user = document.getElementById('regUser').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const pass = document.getElementById('regPass').value;
+  const pass2 = document.getElementById('regPass2').value;
+  const err = document.getElementById('regError');
+  const btn = document.getElementById('regBtn');
+  err.classList.remove('show');
+  if (!user || !email || !pass || !pass2) { err.textContent='Please fill in all fields.'; err.classList.add('show'); return; }
+  if (pass !== pass2) { err.textContent='Passwords do not match.'; err.classList.add('show'); return; }
+  if (pass.length < 6) { err.textContent='Password must be at least 6 characters.'; err.classList.add('show'); return; }
+  btn.textContent='Creating account...'; btn.disabled=true;
+  setTimeout(() => {
+    const key = 'VOID-' + Array.from({length:3},()=>Math.random().toString(36).substring(2,6).toUpperCase()).join('-');
+    localStorage.setItem('voide_user', JSON.stringify({ username: user, email, key, keyActive: false, joined: new Date().toISOString().split('T')[0] }));
+    window.location.href = 'dashboard.html';
+  }, 1400);
+}
+</script>
+</body>
+</html>

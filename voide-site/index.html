@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voide Client — Next-Gen Minecraft Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- Animated background -->
+<div class="bg-mesh"></div>
+<div class="bg-grid"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- NAV -->
+<nav class="nav glass" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="logo-v">V</span><span class="logo-rest">OIDE</span>
+      <div class="logo-badge">CLIENT</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#features" class="nav-link">Features</a></li>
+      <li><a href="#screenshots" class="nav-link">Screenshots</a></li>
+      <li><a href="#download" class="nav-link">Download</a></li>
+      <li><a href="pages/dashboard.html" class="nav-link nav-link--cta">Cabinet <span class="cta-arrow">→</span></a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="pages/login.html" class="btn-ghost">Sign In</a>
+      <a href="pages/register.html" class="btn-primary">Get Access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="badge-dot"></span>
+      <span>Now available — v2.4.1</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="title-line" data-text="PLAY">PLAY</span>
+      <span class="title-line title-line--accent" data-text="BEYOND">BEYOND</span>
+      <span class="title-line" data-text="LIMITS">LIMITS</span>
+    </h1>
+    <p class="hero-sub">The most powerful Minecraft client built on Forge 1.16.5.<br>Modules. Speed. Total control.</p>
+    <div class="hero-actions">
+      <a href="#download" class="btn-primary btn-lg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Download Free
+      </a>
+      <a href="#features" class="btn-ghost btn-lg">Explore Features</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" data-target="2400">0</span><span class="stat-label">Active Users</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" data-target="47">0</span><span class="stat-label">Modules</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" data-target="99">0</span><span class="stat-label">% Uptime</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="client-preview glass-card">
+      <div class="client-topbar">
+        <div class="topbar-dots">
+          <span class="dot dot--red"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--green"></span>
+        </div>
+        <span class="topbar-title">Voide Client — Minecraft 1.16.5</span>
+      </div>
+      <div class="client-screen">
+        <div class="client-hud">
+          <div class="hud-armor">
+            <div class="hud-bar" style="--fill: 85%"><span>❤</span><div class="hud-fill"></div></div>
+            <div class="hud-bar" style="--fill: 70%"><span>🍖</span><div class="hud-fill hud-fill--food"></div></div>
+          </div>
+          <div class="hud-coords glass-micro">X: 1042 Y: 64 Z: -380</div>
+          <div class="hud-fps glass-micro">FPS: <span class="fps-num">420</span></div>
+        </div>
+        <div class="module-list glass-micro">
+          <div class="module-item active"><span class="module-dot"></span>KillAura <span class="module-val">3.8 BPS</span></div>
+          <div class="module-item active"><span class="module-dot"></span>Speed <span class="module-val">Strafe</span></div>
+          <div class="module-item active"><span class="module-dot"></span>NoFall <span class="module-val">ON</span></div>
+          <div class="module-item"><span class="module-dot module-dot--off"></span>Scaffold</div>
+          <div class="module-item active"><span class="module-dot"></span>ESP <span class="module-val">Box</span></div>
+          <div class="module-item active"><span class="module-dot"></span>Ambience <span class="module-val">Fog</span></div>
+        </div>
+        <div class="client-world">
+          <div class="world-sky"></div>
+          <div class="world-terrain"></div>
+          <div class="esp-box esp-box-1"></div>
+          <div class="esp-box esp-box-2"></div>
+          <div class="esp-box esp-box-3"></div>
+          <div class="crosshair"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-glow"></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="section-header">
+    <div class="section-tag">Capabilities</div>
+    <h2 class="section-title">Built for <em>winners</em></h2>
+    <p class="section-sub">Every module crafted to perfection on Forge 1.16.5</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card glass-card" data-delay="0">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <h3>Combat Modules</h3>
+      <p>KillAura, AutoClicker, Velocity, Reach — finely tuned for every PvP scenario. Works on all major servers.</p>
+      <div class="feature-tags"><span>KillAura</span><span>Velocity</span><span>AutoBlock</span></div>
+    </div>
+    <div class="feature-card glass-card" data-delay="100">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <h3>Visual ESP</h3>
+      <p>TargetESP, BlockOverlay, AppleVishon — see everything through walls. Customizable colors and box styles.</p>
+      <div class="feature-tags"><span>TargetESP</span><span>BlockOverlay</span><span>Item ESP</span></div>
+    </div>
+    <div class="feature-card glass-card feature-card--wide" data-delay="200">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3>Voide GUI</h3>
+      <p>Custom clickGUI with slide-in animations, AltManager, and real-time module config. Designed to feel premium.</p>
+      <div class="feature-tags"><span>ClickGUI</span><span>AltManager</span><span>Config</span></div>
+    </div>
+    <div class="feature-card glass-card" data-delay="300">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Movement</h3>
+      <p>Speed, Fly, NoFall, Sprint, Scaffold — movement modules that are smooth and bypass-ready.</p>
+      <div class="feature-tags"><span>Speed</span><span>Fly</span><span>Scaffold</span></div>
+    </div>
+    <div class="feature-card glass-card" data-delay="400">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Anti-Cheat Safe</h3>
+      <p>Modules built with bypass in mind. Regular updates to keep up with AC patches on major networks.</p>
+      <div class="feature-tags"><span>NCP</span><span>Watchdog</span><span>Grim</span></div>
+    </div>
+    <div class="feature-card glass-card" data-delay="0">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+      </div>
+      <h3>Discord RPC</h3>
+      <p>Full Discord Rich Presence integration with Telegram button and real-time status display.</p>
+      <div class="feature-tags"><span>RPC</span><span>Telegram</span><span>Status</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots" id="screenshots">
+  <div class="section-header">
+    <div class="section-tag">Gallery</div>
+    <h2 class="section-title">See it in <em>action</em></h2>
+  </div>
+  <div class="screenshots-track">
+    <div class="screenshots-inner" id="screenshotsInner">
+      <!-- Screenshots generated as stylized cards -->
+      <div class="screenshot-card glass-card">
+        <div class="sc-screen sc-pvp">
+          <div class="sc-hud-mini">KillAura • 4.2 BPS</div>
+          <div class="sc-label">PvP Combat</div>
+          <div class="sc-players">
+            <div class="sc-player sc-player--enemy"></div>
+            <div class="sc-esp-box"></div>
+          </div>
+        </div>
+        <div class="sc-caption">Combat Modules</div>
+      </div>
+      <div class="screenshot-card glass-card">
+        <div class="sc-screen sc-gui">
+          <div class="sc-clickgui">
+            <div class="sc-panel">
+              <div class="sc-panel-title">Combat</div>
+              <div class="sc-module on">KillAura</div>
+              <div class="sc-module on">Velocity</div>
+              <div class="sc-module">Criticals</div>
+            </div>
+            <div class="sc-panel">
+              <div class="sc-panel-title">Visual</div>
+              <div class="sc-module on">ESP</div>
+              <div class="sc-module on">BlockOverlay</div>
+              <div class="sc-module">Tracers</div>
+            </div>
+          </div>
+        </div>
+        <div class="sc-caption">Essence ClickGUI</div>
+      </div>
+      <div class="screenshot-card glass-card">
+        <div class="sc-screen sc-esp">
+          <div class="sc-world-bg"></div>
+          <div class="sc-esp-player" style="left:20%;top:30%"></div>
+          <div class="sc-esp-player" style="left:55%;top:25%"></div>
+          <div class="sc-esp-player" style="left:70%;top:40%"></div>
+          <div class="sc-hud-mini">TargetESP • 3 players</div>
+          <div class="sc-label">Entity ESP</div>
+        </div>
+        <div class="sc-caption">Target ESP</div>
+      </div>
+      <div class="screenshot-card glass-card">
+        <div class="sc-screen sc-ambience">
+          <div class="sc-fog"></div>
+          <div class="sc-hud-mini">Ambience • Custom Fog</div>
+          <div class="sc-label">Visual Ambience</div>
+        </div>
+        <div class="sc-caption">Ambience Module</div>
+      </div>
+      <div class="screenshot-card glass-card">
+        <div class="sc-screen sc-launcher">
+          <div class="sc-launcher-ui">
+            <div class="sc-launcher-title">VOIDE</div>
+            <div class="sc-progress-ring"></div>
+            <div class="sc-launcher-status">Launching...</div>
+          </div>
+        </div>
+        <div class="sc-caption">Python Launcher</div>
+      </div>
+      <!-- Duplicate for infinite scroll -->
+      <div class="screenshot-card glass-card">
+        <div class="sc-screen sc-pvp">
+          <div class="sc-hud-mini">KillAura • 4.2 BPS</div>
+          <div class="sc-label">PvP Combat</div>
+          <div class="sc-players">
+            <div class="sc-player sc-player--enemy"></div>
+            <div class="sc-esp-box"></div>
+          </div>
+        </div>
+        <div class="sc-caption">Combat Modules</div>
+      </div>
+      <div class="screenshot-card glass-card">
+        <div class="sc-screen sc-gui">
+          <div class="sc-clickgui">
+            <div class="sc-panel">
+              <div class="sc-panel-title">Combat</div>
+              <div class="sc-module on">KillAura</div>
+              <div class="sc-module on">Velocity</div>
+              <div class="sc-module">Criticals</div>
+            </div>
+            <div class="sc-panel">
+              <div class="sc-panel-title">Visual</div>
+              <div class="sc-module on">ESP</div>
+              <div class="sc-module on">BlockOverlay</div>
+              <div class="sc-module">Tracers</div>
+            </div>
+          </div>
+        </div>
+        <div class="sc-caption">Essence ClickGUI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="download" id="download">
+  <div class="download-inner">
+    <div class="download-info">
+      <div class="section-tag">Download</div>
+      <h2 class="section-title">Get Voide Client</h2>
+      <p class="section-sub">Requires Java 8+, Minecraft 1.16.5, Forge. Register for a key to activate.</p>
+      <div class="dl-specs">
+        <div class="dl-spec"><span class="dl-spec-label">Version</span><span class="dl-spec-val">2.4.1</span></div>
+        <div class="dl-spec"><span class="dl-spec-label">Base</span><span class="dl-spec-val">Forge 1.16.5</span></div>
+        <div class="dl-spec"><span class="dl-spec-label">Size</span><span class="dl-spec-val">~48 MB</span></div>
+        <div class="dl-spec"><span class="dl-spec-label">License</span><span class="dl-spec-val">HWID-Bound</span></div>
+      </div>
+    </div>
+    <div class="download-card glass-card">
+      <div class="dl-logo">
+        <span class="dl-logo-v">V</span>
+      </div>
+      <h3>Voide Launcher</h3>
+      <p>Download the launcher, sign in to your account, activate your key — play.</p>
+      <a href="pages/dashboard.html" class="btn-primary btn-lg dl-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Download via Cabinet
+      </a>
+      <a href="pages/register.html" class="btn-ghost" style="margin-top:12px;width:100%;text-align:center;display:block;">Create account first →</a>
+      <div class="dl-requirements">
+        <span>✓ Windows 10/11</span>
+        <span>✓ Java 8+</span>
+        <span>✓ 2 GB RAM</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <span class="logo-v">V</span><span class="logo-rest">OIDE</span>
+        <div class="logo-badge">CLIENT</div>
+      </div>
+      <p>Next-gen Minecraft client.<br>Built for performance.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#download">Download</a>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <a href="pages/login.html">Sign In</a>
+        <a href="pages/register.html">Register</a>
+        <a href="pages/dashboard.html">Dashboard</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Voide Client. All rights reserved.</span>
+    <span>Forge 1.16.5 • Java Edition</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
